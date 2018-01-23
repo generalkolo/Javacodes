@@ -1,13 +1,7 @@
 import java.util.Scanner;
 
 public class SwitchStatement {
-
-	/**
-	 * @param args
-	 */
-	/**
-	 * @param args
-	 */
+	
 	public static void main(String[] args) {
 		
 		int check;	

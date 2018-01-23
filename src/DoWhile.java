@@ -2,10 +2,15 @@ public class DoWhile {
 	public static void main(String[] args) {
 		int limiter = 0;
 		System.out.println("Before the do while Loop");
-//		/*for(limiter = 0; limiter <= 20 ; limiter++) {
-//			System.out.println(limiter);
-//		}*/
 		
+		/*for(limiter = 0; limiter <= 20 ; limiter++) {
+			System.out.println(limiter);
+		}*/
+		
+		//do{
+		
+		//}while(condition);
+
 		do {
 			System.out.println(limiter);
 			
@@ -19,14 +24,7 @@ public class DoWhile {
 		while(limiter < 1) {
 			System.out.println(limiter);
 			limiter++;
-		}
-		
-		
-		//do{
-		
-		//}while(condition);
-		
+		}		
 		System.out.println("After the while Loop");
-		
 	}
 }
