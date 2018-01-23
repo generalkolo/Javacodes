@@ -1,7 +1,4 @@
-import java.text.BreakIterator;
 import java.util.Scanner;
-
-import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter.DEFAULT;
 
 public class SwitchStatement {
 
@@ -38,27 +35,5 @@ public class SwitchStatement {
 		}
 		
 		System.out.println("After the Switch Statement");
-		
-		/*if(check == 1) {
-			System.out.println("Monday");
-		}
-		if(check == 2) {
-			System.out.println("Tuesday");
-		}
-		if(check == 3) {
-			System.out.println("Wednesday");
-		}
-		if(check == 4) {
-			System.out.println("Thursday");
-		}
-		if(check == 5) {
-			System.out.println("Friday");
-		}
-		if(check == 6) {
-			System.out.println("Saturdday");
-		}
-		if(check == 7) {
-			System.out.println("Sunday");
-		}*/
 	}
 }
