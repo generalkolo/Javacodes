@@ -6,7 +6,7 @@ public class Test {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Random myRandom = new Random();
+		/*Random myRandom = new Random();
 		Scanner myScanner = new Scanner(System.in);
 		
 		int playerOne,playerTwo;
@@ -84,6 +84,23 @@ public class Test {
 			System.out.println("AWWWWW its a Draw!");
 		}
 		
-		System.out.println("GAME OVER!");
+		System.out.println("GAME OVER!");*/
+		
+		Scanner scanner = new Scanner(System.in);
+		String alphabet = scanner.next().toLowerCase();
+		boolean upperCase = alphabet.charAt(0) >= 65 && alphabet.charAt(0) <= 90;
+		boolean lowerCase = alphabet.charAt(0) >= 97 && alphabet.charAt(0) <= 122;
+		boolean vowels = alphabet.equals("a") || alphabet.equals("e")||alphabet.equals("i")
+				|| alphabet.equals("o")|| alphabet.equals("u");
+		
+		if (vowels) {
+			System.out.println("Input is a vowel");
+		}
+		else if (!(upperCase || lowerCase)) {
+			System.out.println("Input is not a letter!");
+		}
+		else {
+			System.out.println("Input is a consonant");
+		}
 	}
 }

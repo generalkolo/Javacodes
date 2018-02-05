@@ -1,4 +1,4 @@
 keys.pub
 keys
-Test.class
-Test.java
+bin/Test.class
+src/Test.java
