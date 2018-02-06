@@ -86,9 +86,9 @@ public class Test {
 		
 		System.out.println("GAME OVER!");*/
 		
-		Scanner scanner = new Scanner(System.in);
+		/*Scanner scanner = new Scanner(System.in);
 		int year = scanner.nextInt();
-		/*String alphabet = scanner.next().toLowerCase();
+		String alphabet = scanner.next().toLowerCase();
 		boolean upperCase = alphabet.charAt(0) >= 65 && alphabet.charAt(0) <= 90;
 		boolean lowerCase = alphabet.charAt(0) >= 97 && alphabet.charAt(0) <= 122;
 		boolean vowels = alphabet.equals("a") || alphabet.equals("e")||alphabet.equals("i")
@@ -102,14 +102,22 @@ public class Test {
 		}
 		else {
 			System.out.println("Input is a consonant");
-		}*/
+		}
 		
 		if ((year % 400 == 0) || ((year % 4 == 0) && (year % 100 != 0))) {
             System.out.println("Print Leap Year");
         }
 		else {
 			System.out.println("Not Print Leap Year");
-        }
+        }*/
 		
+	
+		for (int i = 1; i <= 5; i++) {
+			System.out.println("\nThe Multiplication time table for "+i);
+			System.out.println("-------------------------------------");
+			for(int j = 1;j <= 13; j++) {
+				System.out.println(i+" X "+j+" = "+i*j);
+			}
+		}
 	}
 }
