@@ -1,73 +1,70 @@
 import java.util.Random;
 import java.util.Scanner;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
-
 public class Test {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		Scanner aScanner = new Scanner(System.in);
+		Scanner myScanner = new Scanner(System.in);
+		int playerOneRolls = 0,playerTwoRolls = 0,numberOfGames;
+		char rollDice;
+		numberOfGames = 2;
 		
-		System.out.println("Enter text to be encrypted using Ceasar Cypher___");
-	
-//		String message = aScanner.nextLine();
-		
-		String message = "abcdefghijklmnopqrstuvwxyz";
-		
-//		System.out.println("Encrypted String : "+decryptData(message, 5));
-		
-		System.out.println("Encrypted String : "+(26+-5));
-	}
-	
-	public static String encryptData(String plainText, int shiftKey) {
-		final String ALPHABETS = "abcdefghijklmnopqrstuvwxyz";
-		
-		plainText = plainText.toLowerCase();
-		StringBuilder toBeDisplayed = new StringBuilder();
-		for (int i = 0; i < plainText.length(); i++) {
-						
-			if(!Character.isLetter(plainText.charAt(i))) {
-					toBeDisplayed.append(plainText.charAt(i));
-				}
-			else {
-				int charPosition = ALPHABETS.indexOf(plainText.charAt(i));
-				
-				int keyValue = (shiftKey + charPosition) % 26;
-				char replaceValue = ALPHABETS.charAt(keyValue);
-				toBeDisplayed.append(replaceValue);
-			}
+		do {
+			System.out.println("Player One: \npress 'r' to roll your dice!!!");
+			rollDice = myScanner.nextLine().charAt(0);
 			
-		}
-		return toBeDisplayed.toString();
-	}
-	
-	public static String decryptData(String plainText, int shiftKey) {
-		final String ALPHABETS = "abcdefghijklmnopqrstuvwxyz";
-		
-		plainText = plainText.toLowerCase();
-		StringBuilder toBeDisplayed = new StringBuilder();
-		for (int i = 0; i < plainText.length(); i++) {
-						
-			if(!Character.isLetter(plainText.charAt(i))) {
-					toBeDisplayed.append(plainText.charAt(i));
-				}
-			else {
-				int charPosition = ALPHABETS.indexOf(plainText.charAt(i));
-				
-				int keyValue = (charPosition - shiftKey) % 26;
-				
-				if (keyValue < 0) {
-					keyValue = ALPHABETS.length() + keyValue;
-				}
-				char replaceValue = ALPHABETS.charAt(keyValue);
-				toBeDisplayed.append(replaceValue);
-			}
+			playerOneRolls+=rollDice(rollDice);
 			
+			System.out.println("You rolled "+rollDice(rollDice));
+			System.out.println();
+			
+			System.out.println("Player Two: \npress 'r' to roll your dice!!!");
+			rollDice = myScanner.nextLine().charAt(0);
+			
+			playerTwoRolls+=rollDice(rollDice);
+			
+			System.out.println("You rolled "+rollDice(rollDice));
+			
+			numberOfGames--;
+			
+			System.out.println();
+			System.out.println("Number of games left "+numberOfGames);
+			System.out.println();
+			
+		}while(numberOfGames != 0);
+		
+		System.out.println(playerOneRolls+" Player One rollings "+playerTwoRolls+" player Two rollings");
+		
+		if (playerOneRolls > playerTwoRolls) {
+			System.out.println("Player One wins!! Congratulations");
 		}
-		return toBeDisplayed.toString();
+		else if (playerTwoRolls > playerOneRolls) {
+			System.out.println("Player Two wins!! Congratulations");
+		}
+		else {
+			System.out.println("Its a draw!! Awww");
+		}
+		
+		myScanner.close();
 	}
-	
-	
+
+	private static int rollDice(char rollDice) {
+		Random myRandom = new Random();
+		int randomNumber1 = 0;
+		
+		// TODO Auto-generated method stub
+		switch (rollDice) {
+		case 'r':
+			randomNumber1 = 1 + myRandom.nextInt(6);
+			break;
+		default:
+			do {
+				
+			}while(rollDice != 'r');
+			System.out.println("Wrong input entered!!");
+		}
+		return randomNumber1;
+	}	
 }
