@@ -2,10 +2,11 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Scanner;
 
-public class Test {
+public class birthdayDayCalculator {
 
 	public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
         int currentYear = Calendar.getInstance().get(Calendar.YEAR);
    
         System.out.println("Enter your DOB in the format 09 JANUARY/JAN 1990");
@@ -95,7 +96,6 @@ public class Test {
 	}
 
 	private static String getNumericalMonth(String validMonth) {
-		// TODO Auto-generated method stub
 		String numbericalMonth = "";
 	
 		switch (validMonth) {
