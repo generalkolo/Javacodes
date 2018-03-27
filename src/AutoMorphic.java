@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Test {
-
+public class AutoMorphic {
 	public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int number;
@@ -9,8 +8,9 @@ public class Test {
         
         System.out.println("WELCOME TO AUTOMORPHIC NUMBER APP V1.0");
         System.out.println();
-        System.out.println("Enter 1 to check if a number is autoMorphic, \n2 to display a range of "
-        + "automorphic numbers from 1 to N and \n3 to display automorphic numbers in a given range");
+        System.out.println("ENTER \n1 to check if a number is autoMorphic, \n2 to display a range of "
+        + "automorphic numbers from 1 to N and \n3 to display automorphic numbers in a given range"
+        + "\n4 to display N numbers of auto morphic numbers");
         int choice = sc.nextInt();
         switch (choice) {
 		case 1:
@@ -34,11 +34,24 @@ public class Test {
 			int endNumber = sc.nextInt();
 			displayAutomorphicNumbers(number, endNumber);
 			break;
+		case 4:
+			print("How many auto morphic numbers would you want to be displayed");
+			number = sc.nextInt();
+			displayAutomorphicNumbers(number);
+			break;
 		default:
 			print(choice+ " is a wrong entry. Valid entries - 1,2,3");
 			break;
 		}
         sc.close();
+	}
+
+	private static void displayAutoMorphs(int number) {
+		// TODO Auto-generated method stub
+		int counter = 0;
+		while(counter < number) {
+			displayAutomorphicNumbers(1, 1000000);
+		}
 	}
 
 	private static void print(String message) {
@@ -95,12 +108,26 @@ public class Test {
 	private static void displayAutomorphicNumbers(int startNumber,int endNumber) {
 		// TODO Auto-generated method stub
 		int counter = 0;
-		for(int i= startNumber; i <= endNumber ;i++) {
+		for(int i= startNumber; i <= endNumber; i++) {
 			if (checkAutoMorphicNumber(i)) {
-				System.out.println(i+" is auto Morphic ");
+				System.out.println(i+" is auto Morphic");
 				counter++;
 			}
 		}
 		print("There are "+counter+" auto Morphic numbers between "+startNumber+" and "+endNumber);
+	}
+	
+	private static void displayAutomorphicNumbers(int range) {
+		// TODO Auto-generated method stub
+		int counter = 0;
+			for(int i= 1; i <= 100000000; i++) {
+				if (checkAutoMorphicNumber(i)) {
+					System.out.println(i+" is auto Morphic");
+					counter++;
+				}
+				if (counter == range) {
+					break;
+				}
+			}
 	}
 }
